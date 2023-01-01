@@ -9,3 +9,4 @@
 - Verify if building blocks work together
 #### End-to-End Testing
 - Test entire flows and application features
+- example: begin to end image upload
