@@ -5,9 +5,9 @@ function validateStringNotEmpty(value) {
 }
 
 function validateNumber(number) {
-  if (isNaN(number)) {
-    throw new Error('Invalid number input.');
-  }
+  if (isNaN(number) || typeof number !== 'number') {
+		throw new Error('Invalid number input.');
+	}
 }
 
 exports.validateNumber = validateNumber;
