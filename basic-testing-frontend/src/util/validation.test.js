@@ -1,10 +1,19 @@
 import { validateStringNotEmpty, validateNumber } from './validation';
 
 describe('validateStringNotEmpty()', () => {
-	it('should trow an error, if an empty string is provided', () => {
-		const input = '';
-		const validationFn = () => validateStringNotEmpty(input);
-		expect(validationFn).toThrow('Invalid input - must not be empty.');
+	it('should trow an error, if any other value than a string is provided', () => {
+		const inputEmptyString = '';
+		const inputBool = true;
+		const inputObj = {};
+
+		const validationFnNum = () => validateStringNotEmpty(inputEmptyString);
+		const validationFnBool = () => validateStringNotEmpty(inputBool);
+		const validationFnObj = () => validateStringNotEmpty(inputObj);
+
+		expect(validationFnNum).toThrow('Invalid input - must not be empty.');
+		expect(validationFnBool).toThrow('value.trim is not a function');
+		expect(validationFnObj).toThrow('value.trim is not a function');
+
 	});
 
 	it('should throw an error if a string is empty', () => {
