@@ -34,9 +34,10 @@ describe('cleanNumbers()', () => {
     it('should return an array of number value if an array of string values is provided', () => {
         const numberValues = ['1', '2', '3'];
 
-        const result = cleanNumbers(numberValues);
+        const cleanedNumbers = cleanNumbers(numberValues);
 
-        expect(result[0]).toBeTypeOf('number');
+        expect(cleanedNumbers[0]).toBeTypeOf('number');
+        expect(cleanedNumbers).toEqual([1, 2, 3]);
     });
 
     it('should return an array of numbers with the same length as the input', () => {
